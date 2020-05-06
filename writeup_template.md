@@ -114,9 +114,8 @@ The model used an adam optimizer, so the learning rate was not tuned manually.
 <img src="Display_Images/model_used.PNG" width="700" height="400" />
 
 7. Below is the implement for CNN model:
-
-` 
-from keras.models import Sequential
+ 
+`from keras.models import Sequential
 from keras.layers import Flatten, Dense, Lambda, Activation, Cropping2D
 from keras.layers.convolutional import Conv2D
 from keras.layers.pooling import MaxPooling2D
@@ -145,12 +144,12 @@ model.summary()
 
 model.compile(loss='mse',optimizer='adam')
 history_object = model.fit(X_train,y_train,validation_split=0.2,shuffle=True, nb_epoch=3, verbose=1)
-model.save('model_try.h5')
-`
+model.save('model_try.h5')`
+
 9. I also, trained the same model with various data sets, second submission details are as descried above.
 
 8. At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road.
-[Video] (https://github.com/amundada2310/CarND-Behavioral-Cloning-P3/blob/master/output_video/run_try.mp4)
+[Video](https://github.com/amundada2310/CarND-Behavioral-Cloning-P3/blob/master/output_video/run_try.mp4)
 
 #### 2. Final Model Architecture
 
