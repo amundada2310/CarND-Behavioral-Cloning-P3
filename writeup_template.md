@@ -115,7 +115,9 @@ The model used an adam optimizer, so the learning rate was not tuned manually.
 
 7. Below is the implement for CNN model:
  
-` from keras.models import Sequential
+```
+
+from keras.models import Sequential
   from keras.layers import Flatten, Dense, Lambda, Activation, Cropping2D
   from keras.layers.convolutional import Conv2D
   from keras.layers.pooling import MaxPooling2D
@@ -145,7 +147,9 @@ The model used an adam optimizer, so the learning rate was not tuned manually.
   model.compile(loss='mse',optimizer='adam')
   history_object = model.fit(X_train,y_train,validation_split=0.2,shuffle=True, nb_epoch=3, verbose=1)
   model.save('model_try.h5')
-`
+  
+  
+```
 
 9. I also, trained the same model with various data sets, second submission details are as descried above.
 
