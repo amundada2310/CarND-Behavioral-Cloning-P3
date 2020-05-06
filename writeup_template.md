@@ -113,7 +113,7 @@ The model used an adam optimizer, so the learning rate was not tuned manually.
 
 <img src="Display_Images/model_used.PNG" width="700" height="400" />
 
-7. Below is the implement for CNN model:
+7. Below is the implement for CNN model: with epochs selected as 3
  
 ```
 
@@ -150,11 +150,32 @@ from keras.models import Sequential
   
   
 ```
+8. Below is the code used to plot the mse for training and validation data. The error reduces for training data after 3 epochs, but increases for validation data. Thus, I selected epochs value as 3 for the model.
 
-9. I also, trained the same model with various data sets, second submission details are as descried above.
+```
+from keras.models import Model
+import matplotlib.pyplot as plt
 
-8. At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road.
+### print the keys contained in the history object
+print(history_object.history.keys())
+
+### plot the training and validation loss for each epoch
+plt.plot(history_object.history['loss'])
+plt.plot(history_object.history['val_loss'])
+plt.title('model mean squared error loss')
+plt.ylabel('mean squared error loss')
+plt.xlabel('epoch')
+plt.legend(['training set', 'validation set'], loc='upper right')
+plt.savefig("Model Mean Square Error Loss_try.png")
+#plt.show()
+
+```
+<img src="Model-Errors/Model Mean Square Error Loss_try.png" width="700" height="400" />
+
+9. At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road.
 [Video](https://github.com/amundada2310/CarND-Behavioral-Cloning-P3/blob/master/output_video/run_try.mp4)
+
+10. I also, trained the same model with various data sets, second submission details are as descried above.
 
 #### 2. Final Model Architecture
 
