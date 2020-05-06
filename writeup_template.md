@@ -115,36 +115,37 @@ The model used an adam optimizer, so the learning rate was not tuned manually.
 
 7. Below is the implement for CNN model:
  
-`from keras.models import Sequential
-from keras.layers import Flatten, Dense, Lambda, Activation, Cropping2D
-from keras.layers.convolutional import Conv2D
-from keras.layers.pooling import MaxPooling2D
-from keras.layers import Dropout
+` from keras.models import Sequential
+  from keras.layers import Flatten, Dense, Lambda, Activation, Cropping2D
+  from keras.layers.convolutional import Conv2D
+  from keras.layers.pooling import MaxPooling2D
+  from keras.layers import Dropout
 
-model = Sequential()
-model.add(Lambda(lambda x: (x / 255.0) - 0.5, input_shape = (160,320,3)))
-model.add(Cropping2D(cropping=((70,25), (0,0))))
+  model = Sequential()
+  model.add(Lambda(lambda x: (x / 255.0) - 0.5, input_shape = (160,320,3)))
+  model.add(Cropping2D(cropping=((70,25), (0,0))))
 
-model.add(Conv2D(24, (5,5), subsample = (2,2), activation = 'relu'))
-model.add(Conv2D(36, (5,5), subsample = (2,2), activation = 'relu'))
-model.add(Conv2D(48, (5,5), subsample = (2,2), activation = 'relu'))
-model.add(Conv2D(64, (3,3), activation = 'relu'))
-model.add(Conv2D(64, (3,3), activation = 'relu'))
+  model.add(Conv2D(24, (5,5), subsample = (2,2), activation = 'relu'))
+  model.add(Conv2D(36, (5,5), subsample = (2,2), activation = 'relu'))
+  model.add(Conv2D(48, (5,5), subsample = (2,2), activation = 'relu'))
+  model.add(Conv2D(64, (3,3), activation = 'relu'))
+  model.add(Conv2D(64, (3,3), activation = 'relu'))
 
-model.add(Dropout(0.6))
-model.add(Flatten())
-model.add(Dense(1164,activation = 'relu'))
+  model.add(Dropout(0.6))
+  model.add(Flatten())
+  model.add(Dense(1164,activation = 'relu'))
 
-model.add(Dense(100,activation = 'relu'))
-model.add(Dense(50,activation = 'relu'))
-model.add(Dense(10,activation = 'relu'))
-model.add(Dense(1))
+  model.add(Dense(100,activation = 'relu'))
+  model.add(Dense(50,activation = 'relu'))
+  model.add(Dense(10,activation = 'relu'))
+  model.add(Dense(1))
 
-model.summary()      
+  model.summary()      
 
-model.compile(loss='mse',optimizer='adam')
-history_object = model.fit(X_train,y_train,validation_split=0.2,shuffle=True, nb_epoch=3, verbose=1)
-model.save('model_try.h5')`
+  model.compile(loss='mse',optimizer='adam')
+  history_object = model.fit(X_train,y_train,validation_split=0.2,shuffle=True, nb_epoch=3, verbose=1)
+  model.save('model_try.h5')
+`
 
 9. I also, trained the same model with various data sets, second submission details are as descried above.
 
@@ -158,3 +159,7 @@ Discussed Above.
 #### 3. Creation of the Training Set & Training Process
 
 Discussed Above.
+
+#### 4. Addtional Information
+
+Supporting code files were implemented: - modelplot-histogram.ipynb
