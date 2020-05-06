@@ -71,7 +71,7 @@ The model used an adam optimizer, so the learning rate was not tuned manually.
 
 <img src="Display_Images/hist_try_original.PNG" width="700" height="400" />
 
-6. The images were then augmented in order to avoid the car drifting towards one side. This helped the model to generalize better. Below are few augmented data images from center, left and right camera:
+6. The images were then augmented in order to avoid the car drifting towards one side. Augmentation was done by flipping the images and taking opposite sign of steering angles. This helped the model to generalize better. Below are few augmented data images from center, left and right camera:
 
 <img src="Display_Images/augmented.PNG" width="700" height="400" />
 
