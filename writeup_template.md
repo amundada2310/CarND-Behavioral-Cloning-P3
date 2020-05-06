@@ -187,4 +187,4 @@ Discussed Above.
 
 #### 4. Addtional Information
 
-Supporting code files were implemented: - modelplot-histogram.ipynb
+Supporting code files were implemented: - modelplot-histogram.ipynb and images.py
